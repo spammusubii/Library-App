@@ -1,0 +1,30 @@
+@font-face {
+    font-family: "Fredoka";
+    src: 
+        url("./fonts/Fredoka-Light.woff2") format("woff2"),
+        url("./fonts/Fredoka-Light.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Limelight";
+    src: 
+        url("./fonts/Limelight-Regular.woff2") format("woff2"),
+        url("./fonts/Limelight-Regular.woff") format("woff");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100vw;
+    height: 100vh;
+}
+
+
+.notRead {
+    background-color: red;
+}
