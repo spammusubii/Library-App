@@ -12,10 +12,15 @@
         url("./fonts/Limelight-Regular.woff") format("woff");
 }
 
+:root {
+    --background-color: rgba(247, 247, 247, 0.781);
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Limelight", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 html,
@@ -23,21 +28,17 @@ body {
     width: 100vw;
     height: 100vh;
     font-size: 16px;
-    font-family: "Limelight", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 h1 {
     padding: 10px 10px;
 }
 
-.notRead {
-    background-color: red;
-}
-
 .main-container {
     display: grid;
     grid-template-rows: 100px 1fr;
-    gap: 10px;
+    gap: 3px;
+    height: 100%;
 }
 
 .header {
@@ -51,6 +52,7 @@ h1 {
 .body {
     display: grid;
     grid-template-rows: 100px 1fr;
+    background-color: var(--background-color);
 }
 
 .add-book-container {
@@ -65,9 +67,81 @@ h1 {
     padding: 0.5em 1em;
 }
 
+.bookCard button.notRead {
+    background-color: red;
+}
+
+.books-container {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 250px));
+    grid-auto-rows: 300px;
+    gap: 50px;
+}
+
 .bookCard {
     width: 100%;
-    border: 2px solid black;
+    border: 2px solid white;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 0 10px 3px skyblue;
+    font-size: 1.3em;
+    padding: 20px;
+    transition: all 0.4s;
+}
+
+.bookCard:hover {
+    transform: rotate(3deg);
+}
+
+.bookCard button {
+    background-color: green;
+    width: 120px;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 12px;
+    border: 1px solid lightpink;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.bookCard button:hover {
+    background-color: white;
+    border: 1px solid green;
+}
+
+.bookCard button.notRead:hover {
+    background-color: white;
+    border: 1px solid red;
+}
+
+.bookCard li:last-of-type {
+    justify-self: center;
+}
+
+.bookCard > ul {
+    height: 100%;
+    list-style: none;
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+}
+
+.bookCard > ul li {
+    font-family: "Fredoka", 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.bookCard .remove-card-btn {
+    justify-self: center;
+    background-color: white;
+    border: 1px solid lightslategrey;
+    transition: all 0.4s;
+}
+
+button.remove-card-btn:hover {
+    background-color: red;
+    color: white;
+    border: 1px solid white;
 }
 
 #add-book-modal[open] {
@@ -80,9 +154,12 @@ h1 {
     min-height: 300px;
     display: grid;
     grid-template-rows: 1fr;
-    padding: 20px;
     overflow: auto;
     border-radius: 5px;
+}
+
+#modal-content {
+    padding: 20px;
 }
 
 #add-book-modal h2 {
@@ -126,4 +203,6 @@ h1 {
     right: 0;
     margin-top: 5px;
     margin-right: 5px;
+    width: 23px;
 }
+
