@@ -22,9 +22,108 @@ html,
 body {
     width: 100vw;
     height: 100vh;
+    font-size: 16px;
+    font-family: "Limelight", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+h1 {
+    padding: 10px 10px;
+}
 
 .notRead {
     background-color: red;
+}
+
+.main-container {
+    display: grid;
+    grid-template-rows: 100px 1fr;
+    gap: 10px;
+}
+
+.header {
+    text-align: center;
+    font-size: 2rem;
+    padding-top: 12px;
+    background-color: white;
+    box-shadow: 0 0 10px 5px gray;
+}
+
+.body {
+    display: grid;
+    grid-template-rows: 100px 1fr;
+}
+
+.add-book-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.add-book-container > button {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    padding: 0.5em 1em;
+}
+
+.bookCard {
+    width: 100%;
+    border: 2px solid black;
+}
+
+#add-book-modal[open] {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: beige;
+    min-width: 270px;
+    min-height: 300px;
+    display: grid;
+    grid-template-rows: 1fr;
+    padding: 20px;
+    overflow: auto;
+    border-radius: 5px;
+}
+
+#add-book-modal h2 {
+    justify-self: center;
+}
+
+#add-book-form {
+    display: grid;
+    height: 100%;
+    grid-template-rows: 30px repeat(3, 55px) 25px  55px;
+    gap: 10px;
+}
+
+#add-book-form > button {
+    font-size: 16px;
+    width: 150px;
+    height: 50px;
+    justify-self: center;
+}
+
+.book-input-container:not(:last-of-type){
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+.book-input-container > input,
+.book-input-container {
+    font-size: 16px;
+}
+
+.book-input-container > input {
+    padding: 5px;
+    border-color: white;
+    border-radius: 12px;
+}
+
+#closeModal {
+    font-size: 1.2rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 5px;
+    margin-right: 5px;
 }

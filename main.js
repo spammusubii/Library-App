@@ -1,6 +1,7 @@
 const booksContainer = document.querySelector(".books-container");
 const addBookButton = document.querySelector("#add-book-btn");
 const addBookModal = document.querySelector("#add-book-modal");
+const closeBookModalButton = document.querySelector("#closeModal");
 
 const myLibrary = [
     new Book(crypto.randomUUID(),"Harry Potter", "J. K. Rowling", 123, true),
@@ -34,6 +35,7 @@ function showLibraryBooks(books){
 function createBookCard(book) {
     const bookCard = document.createElement("div");
     bookCard.classList.add("bookCard");
+    const ul = document.createElement("ul");
     Object.entries(book).forEach(([key, value]) => {
         if (key === "id") return;
 
@@ -79,3 +81,11 @@ function processNewBook(title, author, pages, read = false){
     const newBook = addBookToLibrary(title, author, pages, read);
     addBookToDisplay(newBook);
 }
+
+addBookButton.addEventListener("click", () => {
+    addBookModal.showModal();
+})
+
+closeBookModalButton.addEventListener("click", () => {
+    addBookModal.close();
+})
