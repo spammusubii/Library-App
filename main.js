@@ -126,10 +126,3 @@ addBookForm.addEventListener('submit', (e) => {
     e.preventDefault();
     processNewBook(addBookForm);
 })
-
-// init
-function init(){
-    displayAllBooks(myLibrary);
-}
-
-init();
